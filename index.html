@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <meta charset="utf-8" />
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            
+
+	      function HO()
+            {
+                var txt = document.getElementById("no");
+                txt.hidden = false;
+                var txt = document.getElementById("ok");
+                txt.hidden = true;
+                var btn1= document.getElementById("HO");
+                btn1.style.backgroundColor = "red";
+                var btn2= document.getElementById("H2O");
+                btn2.style.backgroundColor = "#d9edff";
+                var btn3= document.getElementById("H2O2");
+                btn3.style.backgroundColor = "#d9edff";
+            }
+        function H2O()
+            {
+                var txt = document.getElementById("ok");
+                txt.hidden = false;
+                var txt = document.getElementById("no");
+                txt.hidden = true;
+                var btn1= document.getElementById("HO");
+                btn1.style.backgroundColor = "#d9edff";
+                var btn2= document.getElementById("H2O");
+                btn2.style.backgroundColor = "green";
+                var btn3= document.getElementById("H2O2");
+                btn3.style.backgroundColor = "#d9edff";
+            }
+        function H2O2()
+            {
+                var txt = document.getElementById("no");
+                txt.hidden = false;
+                var txt = document.getElementById("ok");
+                txt.hidden = true;
+                var btn1= document.getElementById("HO");
+                btn1.style.backgroundColor = "#d9edff";
+                var btn2= document.getElementById("H2O");
+                btn2.style.backgroundColor = "#d9edff";
+                var btn3= document.getElementById("H2O2");
+                btn3.style.backgroundColor = "red";
+            }
+            
+        function alerted()
+            {                
+              var val = document.getElementById("name").value
+              if (val == "0")
+                    {
+                        document.getElementById("name").style.backgroundColor = "green"
+                        var txt = document.getElementById("ok1");
+                        txt.hidden = false;
+                        var txt = document.getElementById("no1");
+                        txt.hidden = true;   
+                    }
+              else
+                    {
+                        document.getElementById("name").style.backgroundColor = "red"
+                        var txt = document.getElementById("ok1");
+                        txt.hidden = true;
+                        var txt = document.getElementById("no1");
+                        txt.hidden = false;
+                    }
+            }            
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+		          <h3>What is formula of water?</h3>
+		          <div id="ok" hidden= true>Correct!</div>
+		          <div id="no" hidden = true>Incorrect</div>
+		          <button id="HO" onclick="HO()">HO</button>
+		          <button id="H2O" onclick="H2O()">H2O</button>
+		          <button id="H2O2" onclick="H2O2()">H2O2</button>
+		
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the freezing point of water in Celsius?</h3>
+                    <div id="ok1" hidden= true>Correct!</div>
+                    <div id="no1" hidden = true>Incorrect</div>
+                
+                    <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+                    <input type="submit" onclick="alerted()">
+                
+                
+            </div>
+        </div>
+    </body>
+</html>
